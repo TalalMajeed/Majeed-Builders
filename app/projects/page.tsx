@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { projects } from '@/lib/projects';
 
 export const metadata: Metadata = {
@@ -117,8 +118,14 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
     >
       <div className="h-52 bg-stone-100 relative overflow-hidden flex-shrink-0">
         <div className="absolute inset-0 bg-stone-200 group-hover:bg-amber-50 transition-colors duration-300" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-stone-300 text-6xl">{project.category === 'Commercial' ? '🏢' : '🏠'}</span>
+        <div className="absolute inset-0 flex items-center justify-center opacity-10 grayscale">
+          <Image
+            src={project.category === 'Commercial' ? '/icons/crane.png' : '/icons/house.png'}
+            alt={project.category}
+            width={80}
+            height={80}
+            className="object-contain"
+          />
         </div>
         <div className="absolute top-3 left-3 flex gap-2">
           <span

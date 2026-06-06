@@ -17,25 +17,25 @@ const stats = [
 
 const services = [
   {
-    icon: '🏗',
+    icon: '/icons/house.png',
     title: 'Residential Construction',
     description:
       'From single-family homes to large apartment complexes, we build living spaces that stand the test of time.',
   },
   {
-    icon: '🏢',
+    icon: '/icons/crane.png',
     title: 'Commercial Buildings',
     description:
       'Office towers, retail centres, and industrial facilities designed for function, efficiency, and longevity.',
   },
   {
-    icon: '🔨',
+    icon: '/icons/blueprint.png',
     title: 'Renovation & Remodeling',
     description:
       'Breathe new life into existing structures with our expert renovation and interior remodeling services.',
   },
   {
-    icon: '📐',
+    icon: '/icons/planning.png',
     title: 'Project Management',
     description:
       'End-to-end project oversight ensuring on-time delivery, cost control, and uncompromising quality.',
@@ -144,7 +144,14 @@ export default function HomePage() {
                   i < services.length - 1 ? 'border-r border-stone-200' : ''
                 } border-b border-stone-200 lg:border-b-0`}
               >
-                <div className="text-3xl mb-5">{service.icon}</div>
+                <div className="relative w-10 h-10 mb-5">
+                  <Image
+                    src={service.icon}
+                    alt={service.title}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
                 <h3 className="text-base font-bold text-stone-900 uppercase mb-3 group-hover:text-amber-700 transition-colors">
                   {service.title}
                 </h3>
@@ -180,10 +187,14 @@ export default function HomePage() {
               >
                 <div className="h-52 bg-stone-200 relative overflow-hidden">
                   <div className="absolute inset-0 bg-stone-200 group-hover:bg-amber-50 transition-colors duration-300" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-stone-400 text-5xl font-black uppercase opacity-30">
-                      {project.category === 'Commercial' ? '🏢' : '🏠'}
-                    </span>
+                  <div className="absolute inset-0 flex items-center justify-center opacity-10 grayscale">
+                    <Image
+                      src={project.category === 'Commercial' ? '/icons/crane.png' : '/icons/house.png'}
+                      alt={project.category}
+                      width={80}
+                      height={80}
+                      className="object-contain"
+                    />
                   </div>
                   <div className="absolute top-3 left-3">
                     <span

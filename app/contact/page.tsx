@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { FormField, Input, Textarea, Select } from '@/components/form';
 import Button from '@/components/button';
 
@@ -14,22 +15,22 @@ const serviceOptions = [
 
 const contactDetails = [
   {
-    icon: '📍',
+    icon: '/icons/location.png',
     label: 'Office Address',
     lines: ['Plot 45, Street 7, F-8/2', 'Islamabad, 44000', 'Pakistan'],
   },
   {
-    icon: '📞',
+    icon: '/icons/phone.png',
     label: 'Phone',
     lines: ['+92 51 345 6789', '+92 300 123 4567'],
   },
   {
-    icon: '✉️',
+    icon: '/icons/email.png',
     label: 'Email',
     lines: ['info@majeedbuilders.pk', 'projects@majeedbuilders.pk'],
   },
   {
-    icon: '🕐',
+    icon: '/icons/timing.png',
     label: 'Working Hours',
     lines: ['Monday – Saturday', '9:00 AM – 6:00 PM PKT'],
   },
@@ -119,7 +120,14 @@ export default function ContactPage() {
 
               {contactDetails.map((item) => (
                 <div key={item.label} className="flex gap-4 p-5 bg-stone-50 border border-stone-200">
-                  <span className="text-xl flex-shrink-0 mt-0.5">{item.icon}</span>
+                  <div className="relative w-6 h-6 flex-shrink-0 mt-0.5">
+                    <Image
+                      src={item.icon}
+                      alt={item.label}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
                   <div>
                     <div className="text-[10px] font-bold text-stone-400 uppercase mb-2">
                       {item.label}
@@ -134,8 +142,15 @@ export default function ContactPage() {
               ))}
 
               {/* Map placeholder */}
-              <div className="mt-6 h-52 bg-stone-100 border border-stone-200 flex flex-col items-center justify-center text-stone-400 gap-2">
-                <span className="text-3xl">🗺</span>
+              <div className="mt-6 h-52 bg-stone-100 border border-stone-200 flex flex-col items-center justify-center text-stone-400 gap-2 relative">
+                <div className="relative w-10 h-10 opacity-60">
+                  <Image
+                    src="/icons/location.png"
+                    alt="Map marker"
+                    fill
+                    className="object-contain grayscale"
+                  />
+                </div>
                 <span className="text-xs font-semibold uppercase">F-8/2, Islamabad</span>
                 <span className="text-xs text-stone-300">Interactive map coming soon</span>
               </div>
@@ -152,7 +167,11 @@ export default function ContactPage() {
 
               {submitted ? (
                 <div className="bg-green-50 border border-green-200 p-8 text-center">
-                  <div className="text-4xl mb-4">✅</div>
+                  <div className="flex justify-center mb-4">
+                    <svg className="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
                   <h3 className="text-xl font-black text-stone-900 uppercase mb-3">
                     Message Sent!
                   </h3>

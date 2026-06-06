@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { projects, getProjectById } from '@/lib/projects';
 import Button from '@/components/button';
 
@@ -74,7 +75,15 @@ export default async function ProjectDetailPage({ params }: Props) {
 
       {/* Image Placeholder */}
       <div className="h-80 sm:h-96 bg-stone-200 border-b border-stone-300 relative flex items-center justify-center overflow-hidden">
-        <span className="text-8xl opacity-20">{project.category === 'Commercial' ? '🏢' : '🏠'}</span>
+        <div className="opacity-15 grayscale">
+          <Image
+            src={project.category === 'Commercial' ? '/icons/crane.png' : '/icons/house.png'}
+            alt={project.category}
+            width={120}
+            height={120}
+            className="object-contain"
+          />
+        </div>
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-amber-700" />
       </div>
 
@@ -158,8 +167,15 @@ export default async function ProjectDetailPage({ params }: Props) {
                   href={`/projects/${p.id}`}
                   className="group bg-white border border-stone-200 hover:border-amber-700 transition-colors p-6 flex gap-5 items-start"
                 >
-                  <div className="w-16 h-16 bg-stone-100 border border-stone-200 flex items-center justify-center flex-shrink-0 text-2xl group-hover:bg-amber-50 transition-colors">
-                    {p.category === 'Commercial' ? '🏢' : '🏠'}
+                  <div className="w-16 h-16 bg-stone-100 border border-stone-200 flex items-center justify-center flex-shrink-0 group-hover:bg-amber-50 transition-colors relative">
+                    <div className="opacity-40 grayscale w-8 h-8 relative">
+                      <Image
+                        src={p.category === 'Commercial' ? '/icons/crane.png' : '/icons/house.png'}
+                        alt={p.category}
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
                   </div>
                   <div>
                     <div className="text-xs text-amber-700 font-bold uppercase mb-1">

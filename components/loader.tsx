@@ -14,6 +14,7 @@ export default function TopLoader() {
     let t3: ReturnType<typeof setTimeout>;
 
     if (isPending) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setVisible(true);
       setWidth(20);
       t1 = setTimeout(() => setWidth(50), 150);
