@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost';
+type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'light';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
 type BaseProps = {
@@ -28,13 +28,15 @@ type Props = ButtonProps | LinkProps;
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-amber-700 text-white hover:bg-amber-800 active:bg-amber-900',
+    'bg-amber-700 text-white active:bg-amber-900',
   secondary:
-    'bg-stone-900 text-white hover:bg-stone-800 active:bg-stone-700',
+    'bg-stone-900 text-white active:bg-stone-700',
   outline:
-    'border border-amber-700 text-amber-700 hover:bg-amber-700 hover:text-white active:bg-amber-800',
+    'border border-amber-700 text-amber-700 active:bg-amber-800',
   ghost:
-    'text-stone-700 hover:bg-stone-100 active:bg-stone-200',
+    'text-stone-700 active:bg-stone-200',
+  light:
+    'bg-white text-amber-800 active:bg-amber-100',
 };
 
 const sizeClasses: Record<ButtonSize, string> = {
@@ -45,7 +47,8 @@ const sizeClasses: Record<ButtonSize, string> = {
 
 function getClasses(variant: ButtonVariant, size: ButtonSize, fullWidth?: boolean, className?: string, disabled?: boolean) {
   return [
-    'inline-flex items-center justify-center gap-2 font-semibold rounded-none transition-all duration-200 cursor-pointer',
+    'btn-hover relative inline-flex items-center justify-center gap-2 font-semibold rounded-none overflow-hidden cursor-pointer',
+    variant === 'light' ? 'btn-light' : '',
     variantClasses[variant],
     sizeClasses[size],
     fullWidth ? 'w-full' : '',
@@ -54,6 +57,15 @@ function getClasses(variant: ButtonVariant, size: ButtonSize, fullWidth?: boolea
   ]
     .filter(Boolean)
     .join(' ');
+}
+
+function ButtonInner({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      <span className="btn-fill" />
+      <span className="btn-label inline-flex items-center gap-2">{children}</span>
+    </>
+  );
 }
 
 export default function Button(props: Props) {
@@ -79,7 +91,7 @@ export default function Button(props: Props) {
         rel={external ? 'noopener noreferrer' : undefined}
         aria-disabled={disabled}
       >
-        {children}
+        <ButtonInner>{children}</ButtonInner>
       </Link>
     );
   }
@@ -92,7 +104,7 @@ export default function Button(props: Props) {
       onClick={onClick}
       disabled={disabled}
     >
-      {children}
+      <ButtonInner>{children}</ButtonInner>
     </button>
   );
 }

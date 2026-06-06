@@ -95,12 +95,9 @@ export default function HomePage() {
             <Button href="/projects" size="lg">
               View Our Projects
             </Button>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200 px-8 py-4 text-base bg-white text-amber-800 hover:bg-amber-50 active:bg-amber-100"
-            >
+            <Button href="/contact" variant="light" size="lg">
               Get a Free Quote
-            </Link>
+            </Button>
           </div>
         </div>
 
@@ -252,12 +249,9 @@ export default function HomePage() {
             <Button href="/contact" variant="secondary" size="lg">
               Contact Us Now
             </Button>
-            <Link
-              href="/projects"
-              className="inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200 px-8 py-4 text-base bg-white text-amber-800 hover:bg-amber-50 active:bg-amber-100"
-            >
+            <Button href="/projects" variant="light" size="lg">
               Browse Projects
-            </Link>
+            </Button>
           </div>
         </div>
       </section>

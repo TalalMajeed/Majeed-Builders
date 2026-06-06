@@ -25,3 +25,36 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* Button fill animation */
+.btn-fill {
+  position: absolute;
+  top: -1px; left: 0; bottom: -1px;
+  height: calc(100% + 2px);
+  width: calc(100% + 10px);
+  background: #d97706;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%);
+  transform: translateX(-105%);
+  transition: transform 0.44s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.btn-label {
+  position: relative;
+  z-index: 2;
+  transition: color 0.44s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-hover:hover .btn-fill {
+  transform: translateX(0%);
+}
+
+.btn-hover:hover .btn-label {
+  color: #ffffff;
+}
+
+/* For light variant: fill the uncovered right area instantly so no bg shows through */
+.btn-hover.btn-light:hover {
+  background-color: #d97706;
+  transition: background-color 0s 0.3s;
+}

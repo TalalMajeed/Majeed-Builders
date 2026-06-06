@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { useNavigation } from '../navigation-provider';
+import Button from '../button';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -78,12 +79,9 @@ export default function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden md:block">
-            <Link
-              href="/contact"
-              className="bg-amber-700 text-white text-xs font-bold uppercase px-5 py-2.5 hover:bg-amber-800 transition-colors duration-150"
-            >
+            <Button href="/contact" size="sm">
               Get a Quote
-            </Link>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -115,13 +113,9 @@ export default function Header() {
               />
             ))}
             <div className="mt-4 pt-4 border-t border-stone-100">
-              <Link
-                href="/contact"
-                onClick={() => setMenuOpen(false)}
-                className="block w-full text-center bg-amber-700 text-white text-xs font-bold uppercase px-5 py-3 hover:bg-amber-800 transition-colors"
-              >
+              <Button href="/contact" size="sm" fullWidth onClick={() => setMenuOpen(false)}>
                 Get a Quote
-              </Link>
+              </Button>
             </div>
           </nav>
         </div>
