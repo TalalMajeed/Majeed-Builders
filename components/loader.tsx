@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useNavigation } from './navigation-provider';
+import { useNavigation } from './navigation';
 
 export default function TopLoader() {
   const { isPending } = useNavigation();

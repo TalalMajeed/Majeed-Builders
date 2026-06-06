@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { useNavigation } from '../navigation-provider';
+import { useNavigation } from '../navigation';
 import Button from '../button';
 
 const navLinks = [

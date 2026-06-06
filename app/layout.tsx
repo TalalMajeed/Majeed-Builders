@@ -4,7 +4,7 @@ import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import TopLoader from '@/components/loader';
 import "./globals.css";
-import { NavigationProvider } from '@/components/navigation-provider';
+import { NavigationProvider } from '@/components/navigation';
 import WhatsApp from '@/components/layout/whatsapp';
 
 const geistSans = Geist({
