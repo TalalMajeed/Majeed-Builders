@@ -70,9 +70,14 @@ export default function ContactPage() {
   const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (field: keyof FormData) => (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setForm((prev) => ({ ...prev, [field]: e.target.value }));
+    if (errors[field]) setErrors((prev) => ({ ...prev, [field]: undefined }));
+  };
+
+  const handleSelect = (field: keyof FormData) => (value: string) => {
+    setForm((prev) => ({ ...prev, [field]: value }));
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: undefined }));
   };
 
@@ -216,7 +221,7 @@ export default function ContactPage() {
                         options={serviceOptions}
                         placeholder="Select a service..."
                         value={form.service}
-                        onChange={handleChange('service')}
+                        onChange={handleSelect('service')}
                         error={!!errors.service}
                       />
                     </FormField>

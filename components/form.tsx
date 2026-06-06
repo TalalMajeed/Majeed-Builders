@@ -1,6 +1,6 @@
 'use client';
 
-import { forwardRef } from 'react';
+import { forwardRef, useState, useRef, useEffect } from 'react';
 
 type FormFieldProps = {
   label: string;
@@ -80,40 +80,85 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
 );
 Textarea.displayName = 'Textarea';
 
-type SelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
+type SelectProps = {
   error?: boolean;
   options: { value: string; label: string }[];
   placeholder?: string;
+  value?: string;
+  onChange?: (value: string) => void;
+  className?: string;
+  disabled?: boolean;
 };
 
-export const Select = forwardRef<HTMLSelectElement, SelectProps>(
-  ({ error, options, placeholder, className, ...props }, ref) => {
-    return (
-      <select
-        ref={ref}
+export function Select({ error, options, placeholder, value, onChange, className, disabled }: SelectProps) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  const selected = options.find((o) => o.value === value);
+
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, []);
+
+  return (
+    <div ref={ref} className={`relative ${className ?? ''}`}>
+      <button
+        type="button"
+        disabled={disabled}
+        onClick={() => setOpen((o) => !o)}
         className={[
-          'w-full px-4 py-3 bg-white border text-stone-900 text-sm appearance-none cursor-pointer',
+          'w-full px-4 py-3 bg-white border text-sm text-left flex items-center justify-between cursor-pointer',
           'focus:outline-none focus:ring-[1px] focus:ring-amber-700 focus:ring-offset-0 focus:border-amber-700',
           'transition-colors duration-150',
-          error ? 'border-red-500' : 'border-stone-300',
-          className ?? '',
+          error ? 'border-red-500' : open ? 'border-amber-700' : 'border-stone-300',
+          selected ? 'text-stone-900' : 'text-stone-400',
+          disabled ? 'opacity-50 cursor-not-allowed' : '',
         ]
           .filter(Boolean)
           .join(' ')}
-        {...props}
       >
-        {placeholder && (
-          <option value="" disabled>
-            {placeholder}
-          </option>
-        )}
-        {options.map((opt) => (
-          <option key={opt.value} value={opt.value}>
-            {opt.label}
-          </option>
-        ))}
-      </select>
-    );
-  }
-);
-Select.displayName = 'Select';
+        <span>{selected ? selected.label : (placeholder ?? 'Select...')}</span>
+        <svg
+          className={`w-4 h-4 text-stone-500 flex-shrink-0 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      {open && (
+        <ul className="absolute z-50 w-full bg-white border border-stone-300 shadow-lg mt-0.5 max-h-60 overflow-auto">
+          {options.map((opt) => (
+            <li
+              key={opt.value}
+              onClick={() => {
+                onChange?.(opt.value);
+                setOpen(false);
+              }}
+              className={[
+                'px-4 py-3 text-sm cursor-pointer flex items-center justify-between',
+                'hover:bg-amber-50 hover:text-amber-900 transition-colors duration-100',
+                opt.value === value ? 'bg-amber-50 text-amber-900 font-medium' : 'text-stone-800',
+              ].join(' ')}
+            >
+              {opt.label}
+              {opt.value === value && (
+                <svg className="w-4 h-4 text-amber-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
