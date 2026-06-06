@@ -44,6 +44,31 @@ function NavLink({ href, label, onClick }: { href: string; label: string; onClic
   );
 }
 
+function MobileNavLink({ href, label, onClick }: { href: string; label: string; onClick?: () => void }) {
+  const pathname = usePathname();
+  const { navigate } = useNavigation();
+  const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    onClick?.();
+    navigate(href);
+  };
+
+  return (
+    <Link
+      href={href}
+      onClick={handleClick}
+      className={[
+        'w-full py-4 px-4 text-sm font-semibold uppercase tracking-wide transition-colors duration-150 active:bg-stone-200',
+        isActive ? 'text-amber-700 bg-amber-50' : 'text-stone-700 hover:bg-stone-50',
+      ].join(' ')}
+    >
+      {label}
+    </Link>
+  );
+}
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -78,15 +103,15 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-stone-700 hover:text-amber-700 transition-colors"
+            className="md:hidden p-3 -mr-1 text-stone-700 hover:text-amber-700 transition-colors cursor-pointer"
             onClick={() => setMenuOpen((prev) => !prev)}
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={menuOpen}
           >
-            <div className="w-5 flex flex-col gap-1">
-              <span className={`block h-[2px] bg-current transition-all duration-200 ${menuOpen ? 'rotate-45 translate-y-[6px]' : ''}`} />
-              <span className={`block h-[2px] bg-current transition-all duration-200 ${menuOpen ? 'opacity-0' : ''}`} />
-              <span className={`block h-[2px] bg-current transition-all duration-200 ${menuOpen ? '-rotate-45 -translate-y-[6px]' : ''}`} />
+            <div className="w-7 flex flex-col gap-[5px]">
+              <span className={`block h-[2.5px] bg-current transition-all duration-200 ${menuOpen ? 'rotate-45 translate-y-[7.5px]' : ''}`} />
+              <span className={`block h-[2.5px] bg-current transition-all duration-200 ${menuOpen ? 'opacity-0' : ''}`} />
+              <span className={`block h-[2.5px] bg-current transition-all duration-200 ${menuOpen ? '-rotate-45 -translate-y-[7.5px]' : ''}`} />
             </div>
           </button>
         </div>
@@ -95,21 +120,21 @@ export default function Header() {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden border-t border-stone-200 bg-white">
-          <nav className="flex flex-col px-4 py-4 gap-1" aria-label="Mobile navigation">
+          <nav className="flex flex-col" aria-label="Mobile navigation">
             {navLinks.map((link) => (
-              <NavLink
+              <MobileNavLink
                 key={link.href}
                 href={link.href}
                 label={link.label}
                 onClick={() => setMenuOpen(false)}
               />
             ))}
-            <div className="mt-4 pt-4 border-t border-stone-100">
-              <Button href="/contact" size="sm" fullWidth onClick={() => setMenuOpen(false)}>
-                Get a Quote
-              </Button>
-            </div>
           </nav>
+          <div className="px-4 py-5 border-t border-stone-100">
+            <Button href="/contact" size="sm" fullWidth className="py-4" onClick={() => setMenuOpen(false)}>
+              Get a Quote
+            </Button>
+          </div>
         </div>
       )}
     </header>

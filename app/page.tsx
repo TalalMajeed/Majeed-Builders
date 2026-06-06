@@ -72,7 +72,7 @@ export default function HomePage() {
       <section className="relative min-h-[93svh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/background.png"
+            src="/background.webp"
             alt="Majeed Builders construction site"
             fill
             priority
