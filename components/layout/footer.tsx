@@ -33,11 +33,11 @@ export default function Footer() {
           <div className="lg:col-span-1 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 bg-amber-700 flex items-center justify-center flex-shrink-0">
-                <span className="text-white font-black text-xs tracking-tight">MB</span>
+                <span className="text-white font-black text-xs">MB</span>
               </div>
               <div className="leading-none">
-                <div className="font-black text-white text-sm tracking-widest uppercase">Majeed</div>
-                <div className="font-light text-stone-400 text-[10px] tracking-[0.3em] uppercase">Builders</div>
+                <div className="font-black text-white text-sm uppercase">Majeed</div>
+                <div className="font-light text-stone-400 text-[10px] uppercase">Builders</div>
               </div>
             </div>
             <p className="text-sm text-stone-400 leading-relaxed">
@@ -51,7 +51,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-white font-bold text-xs tracking-[0.25em] uppercase">Quick Links</h3>
+            <h3 className="text-white font-bold text-xs uppercase">Quick Links</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
@@ -69,7 +69,7 @@ export default function Footer() {
 
           {/* Services */}
           <div className="space-y-4">
-            <h3 className="text-white font-bold text-xs tracking-[0.25em] uppercase">Our Services</h3>
+            <h3 className="text-white font-bold text-xs uppercase">Our Services</h3>
             <ul className="space-y-2">
               {services.map((service) => (
                 <li key={service} className="text-stone-400 text-sm flex items-center gap-2">
@@ -82,7 +82,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="space-y-4">
-            <h3 className="text-white font-bold text-xs tracking-[0.25em] uppercase">Contact Us</h3>
+            <h3 className="text-white font-bold text-xs uppercase">Contact Us</h3>
             <ul className="space-y-3 text-sm text-stone-400">
               <li className="flex gap-3">
                 <span className="text-amber-700 mt-0.5 flex-shrink-0">&#9679;</span>
@@ -112,7 +112,7 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-stone-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-stone-500 text-xs tracking-wide">
+          <p className="text-stone-500 text-xs">
             &copy; {currentYear} Majeed Builders. All rights reserved.
           </p>
           <div className="flex items-center gap-6">

@@ -39,7 +39,7 @@ export default function TopLoader() {
   return (
     <div
       aria-hidden="true"
-      className="fixed top-0 left-0 z-[9999] h-[3px] bg-amber-600 shadow-[0_0_8px_rgba(180,83,9,0.6)]"
+      className="fixed top-0 left-0 z-[9999] h-[3px] bg-amber-600"
       style={{
         width: `${width}%`,
         transition: width === 100 ? 'width 0.2s ease-out' : 'width 0.4s ease-in-out',

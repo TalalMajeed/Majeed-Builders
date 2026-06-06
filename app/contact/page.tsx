@@ -93,8 +93,8 @@ export default function ContactPage() {
       {/* Page Hero */}
       <section className="bg-stone-900 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <span className="text-amber-500 text-xs font-bold tracking-[0.35em] uppercase">Get in Touch</span>
-          <h1 className="mt-3 text-5xl font-black text-white uppercase tracking-tight leading-tight">
+          <span className="text-amber-500 text-xs font-bold uppercase">Get in Touch</span>
+          <h1 className="mt-3 text-5xl font-black text-white uppercase leading-tight">
             Contact Us
           </h1>
           <div className="mt-4 h-[3px] w-12 bg-amber-700" />
@@ -111,7 +111,7 @@ export default function ContactPage() {
             {/* Contact Details */}
             <div className="lg:col-span-2 space-y-6">
               <div>
-                <h2 className="text-xl font-black text-stone-900 uppercase tracking-tight mb-2">
+                <h2 className="text-xl font-black text-stone-900 uppercase mb-2">
                   Office Information
                 </h2>
                 <div className="h-[2px] w-8 bg-amber-700" />
@@ -121,7 +121,7 @@ export default function ContactPage() {
                 <div key={item.label} className="flex gap-4 p-5 bg-stone-50 border border-stone-200">
                   <span className="text-xl flex-shrink-0 mt-0.5">{item.icon}</span>
                   <div>
-                    <div className="text-[10px] font-bold text-stone-400 uppercase tracking-widest mb-2">
+                    <div className="text-[10px] font-bold text-stone-400 uppercase mb-2">
                       {item.label}
                     </div>
                     {item.lines.map((line) => (
@@ -136,7 +136,7 @@ export default function ContactPage() {
               {/* Map placeholder */}
               <div className="mt-6 h-52 bg-stone-100 border border-stone-200 flex flex-col items-center justify-center text-stone-400 gap-2">
                 <span className="text-3xl">🗺</span>
-                <span className="text-xs font-semibold tracking-widest uppercase">F-8/2, Islamabad</span>
+                <span className="text-xs font-semibold uppercase">F-8/2, Islamabad</span>
                 <span className="text-xs text-stone-300">Interactive map coming soon</span>
               </div>
             </div>
@@ -144,7 +144,7 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div className="lg:col-span-3">
               <div className="mb-8">
-                <h2 className="text-xl font-black text-stone-900 uppercase tracking-tight mb-2">
+                <h2 className="text-xl font-black text-stone-900 uppercase mb-2">
                   Send Us a Message
                 </h2>
                 <div className="h-[2px] w-8 bg-amber-700" />
@@ -153,7 +153,7 @@ export default function ContactPage() {
               {submitted ? (
                 <div className="bg-green-50 border border-green-200 p-8 text-center">
                   <div className="text-4xl mb-4">✅</div>
-                  <h3 className="text-xl font-black text-stone-900 uppercase tracking-tight mb-3">
+                  <h3 className="text-xl font-black text-stone-900 uppercase mb-3">
                     Message Sent!
                   </h3>
                   <p className="text-stone-600 leading-relaxed mb-6">

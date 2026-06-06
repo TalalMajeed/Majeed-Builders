@@ -24,8 +24,8 @@ export default function ProjectsPage() {
       {/* Page Hero */}
       <section className="bg-stone-900 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <span className="text-amber-500 text-xs font-bold tracking-[0.35em] uppercase">Portfolio</span>
-          <h1 className="mt-3 text-5xl font-black text-white uppercase tracking-tight leading-tight">
+          <span className="text-amber-500 text-xs font-bold uppercase">Portfolio</span>
+          <h1 className="mt-3 text-5xl font-black text-white uppercase leading-tight">
             Our Projects
           </h1>
           <div className="mt-4 h-[3px] w-12 bg-amber-700" />
@@ -39,7 +39,7 @@ export default function ProjectsPage() {
       {/* Stats Bar */}
       <section className="bg-amber-700 py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap gap-8 items-center justify-center sm:justify-start text-white text-sm font-semibold tracking-widest uppercase">
+          <div className="flex flex-wrap gap-8 items-center justify-center sm:justify-start text-white text-sm font-semibold uppercase">
             <span>{projects.length} Total Projects</span>
             <span className="text-amber-300">·</span>
             <span>{completed.length} Completed</span>
@@ -54,8 +54,8 @@ export default function ProjectsPage() {
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-10">
-              <span className="text-amber-700 text-xs font-bold tracking-[0.35em] uppercase">Active</span>
-              <h2 className="mt-2 text-3xl font-black text-stone-900 uppercase tracking-tight">
+              <span className="text-amber-700 text-xs font-bold uppercase">Active</span>
+              <h2 className="mt-2 text-3xl font-black text-stone-900 uppercase">
                 Currently In Progress
               </h2>
               <div className="mt-3 h-[3px] w-10 bg-amber-700" />
@@ -73,8 +73,8 @@ export default function ProjectsPage() {
       <section className={`py-16 ${inProgress.length > 0 ? 'bg-stone-50' : 'bg-white'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-10">
-            <span className="text-amber-700 text-xs font-bold tracking-[0.35em] uppercase">Delivered</span>
-            <h2 className="mt-2 text-3xl font-black text-stone-900 uppercase tracking-tight">
+            <span className="text-amber-700 text-xs font-bold uppercase">Delivered</span>
+            <h2 className="mt-2 text-3xl font-black text-stone-900 uppercase">
               Completed Projects
             </h2>
             <div className="mt-3 h-[3px] w-10 bg-amber-700" />
@@ -90,7 +90,7 @@ export default function ProjectsPage() {
       {/* CTA */}
       <section className="py-16 bg-stone-900">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-black text-white uppercase tracking-tight mb-4">
+          <h2 className="text-3xl font-black text-white uppercase mb-4">
             Have a Project in Mind?
           </h2>
           <p className="text-stone-400 mb-8 leading-relaxed">
@@ -99,7 +99,7 @@ export default function ProjectsPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-amber-700 text-white text-sm font-bold tracking-widest uppercase px-8 py-4 hover:bg-amber-800 transition-colors"
+            className="inline-flex items-center gap-2 bg-amber-700 text-white text-sm font-bold uppercase px-8 py-4 hover:bg-amber-800 transition-colors"
           >
             Start a Conversation
           </Link>
@@ -115,15 +115,14 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
       href={`/projects/${project.id}`}
       className="group bg-white border border-stone-200 hover:border-amber-700 transition-colors duration-200 overflow-hidden flex flex-col"
     >
-      {/* Image placeholder */}
       <div className="h-52 bg-stone-100 relative overflow-hidden flex-shrink-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-stone-200 to-stone-300 group-hover:from-amber-50 group-hover:to-stone-200 transition-colors duration-300" />
+        <div className="absolute inset-0 bg-stone-200 group-hover:bg-amber-50 transition-colors duration-300" />
         <div className="absolute inset-0 flex items-center justify-center">
           <span className="text-stone-300 text-6xl">{project.category === 'Commercial' ? '🏢' : '🏠'}</span>
         </div>
         <div className="absolute top-3 left-3 flex gap-2">
           <span
-            className={`text-xs font-bold tracking-widest uppercase px-3 py-1 ${
+            className={`text-xs font-bold uppercase px-3 py-1 ${
               project.status === 'Completed'
                 ? 'bg-green-700 text-white'
                 : 'bg-amber-600 text-white'
@@ -131,17 +130,17 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
           >
             {project.status}
           </span>
-          <span className="text-xs font-bold tracking-widest uppercase px-3 py-1 bg-stone-900/80 text-white">
+          <span className="text-xs font-bold uppercase px-3 py-1 bg-stone-900/80 text-white">
             {project.category}
           </span>
         </div>
       </div>
 
       <div className="p-6 flex flex-col flex-1">
-        <div className="text-xs text-amber-700 font-bold tracking-widest uppercase mb-2">
+        <div className="text-xs text-amber-700 font-bold uppercase mb-2">
           {project.location} · {project.year}
         </div>
-        <h3 className="text-lg font-bold text-stone-900 uppercase tracking-wide mb-3 group-hover:text-amber-700 transition-colors">
+        <h3 className="text-lg font-bold text-stone-900 uppercase mb-3 group-hover:text-amber-700 transition-colors">
           {project.name}
         </h3>
         <p className="text-stone-500 text-sm leading-relaxed mb-5 flex-1 line-clamp-2">
@@ -150,16 +149,16 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
 
         <div className="grid grid-cols-2 gap-3 pt-4 border-t border-stone-100 text-xs">
           <div>
-            <div className="text-stone-400 uppercase tracking-wider">Area</div>
+            <div className="text-stone-400 uppercase">Area</div>
             <div className="text-stone-700 font-semibold mt-0.5">{project.area}</div>
           </div>
           <div>
-            <div className="text-stone-400 uppercase tracking-wider">Units</div>
+            <div className="text-stone-400 uppercase">Units</div>
             <div className="text-stone-700 font-semibold mt-0.5">{project.units}</div>
           </div>
         </div>
 
-        <div className="mt-4 text-xs text-amber-700 font-semibold tracking-wide group-hover:underline">
+        <div className="mt-4 text-xs text-amber-700 font-semibold group-hover:underline">
           View Project Details →
         </div>
       </div>

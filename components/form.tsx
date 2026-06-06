@@ -13,7 +13,7 @@ type FormFieldProps = {
 export function FormField({ label, error, required, children, className }: FormFieldProps) {
   return (
     <div className={`flex flex-col gap-1.5 ${className ?? ''}`}>
-      <label className="text-sm font-semibold text-stone-800 tracking-wide uppercase">
+      <label className="text-sm font-semibold text-stone-800 uppercase">
         {label}
         {required && <span className="text-amber-700 ml-1">*</span>}
       </label>

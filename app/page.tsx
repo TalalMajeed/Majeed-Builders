@@ -81,11 +81,11 @@ export default function HomePage() {
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-block mb-6">
-            <span className="text-amber-500 text-xs font-bold tracking-[0.4em] uppercase border border-amber-500/50 px-4 py-2">
+            <span className="text-amber-500 text-xs font-bold uppercase border border-amber-500/50 px-4 py-2">
               Islamabad, Pakistan
             </span>
           </div>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tight leading-none mb-6">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white uppercase leading-none mb-6">
             Building Your<br />
             <span className="text-amber-500">Vision</span> Into<br />
             Reality
@@ -104,7 +104,6 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Scroll hint */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
           <div className="w-[1px] h-10 bg-stone-400/60 animate-pulse" />
         </div>
@@ -116,8 +115,8 @@ export default function HomePage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {stats.map((stat) => (
               <div key={stat.label} className="text-white">
-                <div className="text-4xl font-black tracking-tight">{stat.value}</div>
-                <div className="text-amber-200 text-xs font-semibold tracking-widest uppercase mt-1">
+                <div className="text-4xl font-black">{stat.value}</div>
+                <div className="text-amber-200 text-xs font-semibold uppercase mt-1">
                   {stat.label}
                 </div>
               </div>
@@ -130,8 +129,8 @@ export default function HomePage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-14 max-w-xl">
-            <span className="text-amber-700 text-xs font-bold tracking-[0.35em] uppercase">What We Do</span>
-            <h2 className="mt-3 text-4xl font-black text-stone-900 uppercase tracking-tight leading-tight">
+            <span className="text-amber-700 text-xs font-bold uppercase">What We Do</span>
+            <h2 className="mt-3 text-4xl font-black text-stone-900 uppercase leading-tight">
               Our Core Services
             </h2>
             <div className="mt-4 h-[3px] w-12 bg-amber-700" />
@@ -146,7 +145,7 @@ export default function HomePage() {
                 } border-b border-stone-200 lg:border-b-0`}
               >
                 <div className="text-3xl mb-5">{service.icon}</div>
-                <h3 className="text-base font-bold text-stone-900 uppercase tracking-wide mb-3 group-hover:text-amber-700 transition-colors">
+                <h3 className="text-base font-bold text-stone-900 uppercase mb-3 group-hover:text-amber-700 transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-stone-500 text-sm leading-relaxed">{service.description}</p>
@@ -161,8 +160,8 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
             <div>
-              <span className="text-amber-700 text-xs font-bold tracking-[0.35em] uppercase">Portfolio</span>
-              <h2 className="mt-3 text-4xl font-black text-stone-900 uppercase tracking-tight leading-tight">
+              <span className="text-amber-700 text-xs font-bold uppercase">Portfolio</span>
+              <h2 className="mt-3 text-4xl font-black text-stone-900 uppercase leading-tight">
                 Featured Projects
               </h2>
               <div className="mt-4 h-[3px] w-12 bg-amber-700" />
@@ -179,17 +178,16 @@ export default function HomePage() {
                 href={`/projects/${project.id}`}
                 className="group bg-white border border-stone-200 hover:border-amber-700 transition-colors duration-200 overflow-hidden"
               >
-                {/* Image placeholder */}
                 <div className="h-52 bg-stone-200 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-stone-300 to-stone-400 group-hover:from-amber-100 group-hover:to-stone-300 transition-colors duration-300" />
+                  <div className="absolute inset-0 bg-stone-200 group-hover:bg-amber-50 transition-colors duration-300" />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-stone-400 text-5xl font-black uppercase tracking-widest opacity-30">
+                    <span className="text-stone-400 text-5xl font-black uppercase opacity-30">
                       {project.category === 'Commercial' ? '🏢' : '🏠'}
                     </span>
                   </div>
                   <div className="absolute top-3 left-3">
                     <span
-                      className={`text-xs font-bold tracking-widest uppercase px-3 py-1 ${
+                      className={`text-xs font-bold uppercase px-3 py-1 ${
                         project.status === 'Completed'
                           ? 'bg-green-700 text-white'
                           : 'bg-amber-600 text-white'
@@ -200,10 +198,10 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <div className="text-xs text-amber-700 font-bold tracking-widest uppercase mb-2">
+                  <div className="text-xs text-amber-700 font-bold uppercase mb-2">
                     {project.category} · {project.year}
                   </div>
-                  <h3 className="text-lg font-bold text-stone-900 uppercase tracking-wide mb-2 group-hover:text-amber-700 transition-colors">
+                  <h3 className="text-lg font-bold text-stone-900 uppercase mb-2 group-hover:text-amber-700 transition-colors">
                     {project.name}
                   </h3>
                   <p className="text-stone-500 text-sm mb-4 line-clamp-2">{project.description}</p>
@@ -222,8 +220,8 @@ export default function HomePage() {
       <section className="py-20 bg-stone-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-14 max-w-xl">
-            <span className="text-amber-500 text-xs font-bold tracking-[0.35em] uppercase">Why Us</span>
-            <h2 className="mt-3 text-4xl font-black text-white uppercase tracking-tight leading-tight">
+            <span className="text-amber-500 text-xs font-bold uppercase">Why Us</span>
+            <h2 className="mt-3 text-4xl font-black text-white uppercase leading-tight">
               The Majeed Builders Difference
             </h2>
             <div className="mt-4 h-[3px] w-12 bg-amber-700" />
@@ -236,7 +234,7 @@ export default function HomePage() {
                   0{i + 1}
                 </div>
                 <div>
-                  <h3 className="text-white font-bold uppercase tracking-wide text-sm mb-2">
+                  <h3 className="text-white font-bold uppercase text-sm mb-2">
                     {item.title}
                   </h3>
                   <p className="text-stone-400 text-sm leading-relaxed">{item.description}</p>
@@ -250,7 +248,7 @@ export default function HomePage() {
       {/* CTA */}
       <section className="py-20 bg-amber-700">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-black text-white uppercase tracking-tight mb-4">
+          <h2 className="text-4xl font-black text-white uppercase mb-4">
             Ready to Start Building?
           </h2>
           <p className="text-amber-100 text-lg mb-10 leading-relaxed">
@@ -263,7 +261,7 @@ export default function HomePage() {
             </Button>
             <Link
               href="/projects"
-              className="inline-flex items-center justify-center gap-2 font-semibold tracking-wide transition-all duration-200 px-8 py-4 text-base bg-white text-amber-800 hover:bg-amber-50 active:bg-amber-100"
+              className="inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200 px-8 py-4 text-base bg-white text-amber-800 hover:bg-amber-50 active:bg-amber-100"
             >
               Browse Projects
             </Link>

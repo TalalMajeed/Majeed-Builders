@@ -28,7 +28,7 @@ function NavLink({ href, label, onClick }: { href: string; label: string; onClic
       href={href}
       onClick={handleClick}
       className={[
-        'text-sm font-semibold tracking-widest uppercase transition-colors duration-150 relative group',
+        'text-sm font-semibold uppercase transition-colors duration-150 relative group',
         isActive ? 'text-amber-700' : 'text-stone-700 hover:text-amber-700',
       ].join(' ')}
     >
@@ -47,7 +47,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-stone-200 shadow-sm">
+    <header className="sticky top-0 z-50 bg-white border-b border-stone-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -57,13 +57,13 @@ export default function Header() {
             aria-label="Majeed Builders — Home"
           >
             <div className="w-8 h-8 bg-amber-700 flex items-center justify-center flex-shrink-0">
-              <span className="text-white font-black text-xs tracking-tight">MB</span>
+              <span className="text-white font-black text-xs">MB</span>
             </div>
             <div className="flex flex-col leading-none">
-              <span className="font-black text-stone-900 text-sm tracking-widest uppercase">
+              <span className="font-black text-stone-900 text-sm uppercase">
                 Majeed
               </span>
-              <span className="font-light text-stone-500 text-[10px] tracking-[0.3em] uppercase">
+              <span className="font-light text-stone-500 text-[10px] uppercase">
                 Builders
               </span>
             </div>
@@ -80,7 +80,7 @@ export default function Header() {
           <div className="hidden md:block">
             <Link
               href="/contact"
-              className="bg-amber-700 text-white text-xs font-bold tracking-widest uppercase px-5 py-2.5 hover:bg-amber-800 transition-colors duration-150"
+              className="bg-amber-700 text-white text-xs font-bold uppercase px-5 py-2.5 hover:bg-amber-800 transition-colors duration-150"
             >
               Get a Quote
             </Link>
@@ -94,15 +94,9 @@ export default function Header() {
             aria-expanded={menuOpen}
           >
             <div className="w-5 flex flex-col gap-1">
-              <span
-                className={`block h-[2px] bg-current transition-all duration-200 ${menuOpen ? 'rotate-45 translate-y-[6px]' : ''}`}
-              />
-              <span
-                className={`block h-[2px] bg-current transition-all duration-200 ${menuOpen ? 'opacity-0' : ''}`}
-              />
-              <span
-                className={`block h-[2px] bg-current transition-all duration-200 ${menuOpen ? '-rotate-45 -translate-y-[6px]' : ''}`}
-              />
+              <span className={`block h-[2px] bg-current transition-all duration-200 ${menuOpen ? 'rotate-45 translate-y-[6px]' : ''}`} />
+              <span className={`block h-[2px] bg-current transition-all duration-200 ${menuOpen ? 'opacity-0' : ''}`} />
+              <span className={`block h-[2px] bg-current transition-all duration-200 ${menuOpen ? '-rotate-45 -translate-y-[6px]' : ''}`} />
             </div>
           </button>
         </div>
@@ -124,7 +118,7 @@ export default function Header() {
               <Link
                 href="/contact"
                 onClick={() => setMenuOpen(false)}
-                className="block w-full text-center bg-amber-700 text-white text-xs font-bold tracking-widest uppercase px-5 py-3 hover:bg-amber-800 transition-colors"
+                className="block w-full text-center bg-amber-700 text-white text-xs font-bold uppercase px-5 py-3 hover:bg-amber-800 transition-colors"
               >
                 Get a Quote
               </Link>

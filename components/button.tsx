@@ -28,9 +28,9 @@ type Props = ButtonProps | LinkProps;
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-amber-700 text-white hover:bg-amber-800 active:bg-amber-900 shadow-sm',
+    'bg-amber-700 text-white hover:bg-amber-800 active:bg-amber-900',
   secondary:
-    'bg-stone-900 text-white hover:bg-stone-800 active:bg-stone-700 shadow-sm',
+    'bg-stone-900 text-white hover:bg-stone-800 active:bg-stone-700',
   outline:
     'border border-amber-700 text-amber-700 hover:bg-amber-700 hover:text-white active:bg-amber-800',
   ghost:
@@ -45,7 +45,7 @@ const sizeClasses: Record<ButtonSize, string> = {
 
 function getClasses(variant: ButtonVariant, size: ButtonSize, fullWidth?: boolean, className?: string, disabled?: boolean) {
   return [
-    'inline-flex items-center justify-center gap-2 font-semibold rounded-none tracking-wide transition-all duration-200 cursor-pointer',
+    'inline-flex items-center justify-center gap-2 font-semibold rounded-none transition-all duration-200 cursor-pointer',
     variantClasses[variant],
     sizeClasses[size],
     fullWidth ? 'w-full' : '',

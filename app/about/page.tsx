@@ -75,8 +75,8 @@ export default function AboutPage() {
       {/* Page Hero */}
       <section className="bg-stone-900 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <span className="text-amber-500 text-xs font-bold tracking-[0.35em] uppercase">About Us</span>
-          <h1 className="mt-3 text-5xl font-black text-white uppercase tracking-tight leading-tight">
+          <span className="text-amber-500 text-xs font-bold uppercase">About Us</span>
+          <h1 className="mt-3 text-5xl font-black text-white uppercase leading-tight">
             Built on Trust.<br />
             <span className="text-amber-500">Built to Last.</span>
           </h1>
@@ -93,8 +93,8 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-amber-700 text-xs font-bold tracking-[0.35em] uppercase">Our Story</span>
-              <h2 className="mt-3 text-4xl font-black text-stone-900 uppercase tracking-tight">
+              <span className="text-amber-700 text-xs font-bold uppercase">Our Story</span>
+              <h2 className="mt-3 text-4xl font-black text-stone-900 uppercase">
                 From Foundations to Skylines
               </h2>
               <div className="mt-4 h-[3px] w-12 bg-amber-700 mb-8" />
@@ -130,7 +130,7 @@ export default function AboutPage() {
               ].map((stat) => (
                 <div key={stat.label} className="bg-stone-50 border border-stone-200 p-8 text-center">
                   <div className="text-4xl font-black text-amber-700">{stat.value}</div>
-                  <div className="text-xs text-stone-500 font-semibold tracking-widest uppercase mt-2">
+                  <div className="text-xs text-stone-500 font-semibold uppercase mt-2">
                     {stat.label}
                   </div>
                 </div>
@@ -146,7 +146,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-stone-200">
             <div className="p-10 border-r border-stone-200">
               <div className="h-1 w-10 bg-amber-700 mb-6" />
-              <h3 className="text-2xl font-black text-stone-900 uppercase tracking-tight mb-4">
+              <h3 className="text-2xl font-black text-stone-900 uppercase mb-4">
                 Our Mission
               </h3>
               <p className="text-stone-600 leading-relaxed">
@@ -157,7 +157,7 @@ export default function AboutPage() {
             </div>
             <div className="p-10">
               <div className="h-1 w-10 bg-amber-700 mb-6" />
-              <h3 className="text-2xl font-black text-stone-900 uppercase tracking-tight mb-4">
+              <h3 className="text-2xl font-black text-stone-900 uppercase mb-4">
                 Our Vision
               </h3>
               <p className="text-stone-600 leading-relaxed">
@@ -174,8 +174,8 @@ export default function AboutPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-14">
-            <span className="text-amber-700 text-xs font-bold tracking-[0.35em] uppercase">What Drives Us</span>
-            <h2 className="mt-3 text-4xl font-black text-stone-900 uppercase tracking-tight">
+            <span className="text-amber-700 text-xs font-bold uppercase">What Drives Us</span>
+            <h2 className="mt-3 text-4xl font-black text-stone-900 uppercase">
               Our Core Values
             </h2>
             <div className="mt-4 h-[3px] w-12 bg-amber-700" />
@@ -185,7 +185,7 @@ export default function AboutPage() {
             {values.map((value, i) => (
               <div key={value.title} className="p-8 bg-stone-50 border border-stone-200 hover:border-amber-700 transition-colors group">
                 <div className="text-amber-700 font-black text-4xl mb-4 leading-none">0{i + 1}</div>
-                <h3 className="text-stone-900 font-bold uppercase tracking-wide text-sm mb-3 group-hover:text-amber-700 transition-colors">
+                <h3 className="text-stone-900 font-bold uppercase text-sm mb-3 group-hover:text-amber-700 transition-colors">
                   {value.title}
                 </h3>
                 <p className="text-stone-500 text-sm leading-relaxed">{value.description}</p>
@@ -199,8 +199,8 @@ export default function AboutPage() {
       <section className="py-20 bg-stone-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-14">
-            <span className="text-amber-500 text-xs font-bold tracking-[0.35em] uppercase">Our Journey</span>
-            <h2 className="mt-3 text-4xl font-black text-white uppercase tracking-tight">
+            <span className="text-amber-500 text-xs font-bold uppercase">Our Journey</span>
+            <h2 className="mt-3 text-4xl font-black text-white uppercase">
               Key Milestones
             </h2>
             <div className="mt-4 h-[3px] w-12 bg-amber-700" />
@@ -227,8 +227,8 @@ export default function AboutPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-14">
-            <span className="text-amber-700 text-xs font-bold tracking-[0.35em] uppercase">The People</span>
-            <h2 className="mt-3 text-4xl font-black text-stone-900 uppercase tracking-tight">
+            <span className="text-amber-700 text-xs font-bold uppercase">The People</span>
+            <h2 className="mt-3 text-4xl font-black text-stone-900 uppercase">
               Meet Our Leadership
             </h2>
             <div className="mt-4 h-[3px] w-12 bg-amber-700" />
@@ -237,17 +237,16 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map((member) => (
               <div key={member.name} className="bg-stone-50 border border-stone-200 overflow-hidden group hover:border-amber-700 transition-colors">
-                {/* Avatar placeholder */}
-                <div className="h-44 bg-gradient-to-br from-stone-200 to-stone-300 group-hover:from-amber-50 group-hover:to-stone-200 transition-colors duration-300 flex items-center justify-center">
+                <div className="h-44 bg-stone-200 group-hover:bg-amber-50 transition-colors duration-300 flex items-center justify-center">
                   <span className="text-5xl font-black text-stone-400 opacity-40 uppercase">
                     {member.name.charAt(0)}
                   </span>
                 </div>
                 <div className="p-6">
-                  <h3 className="font-bold text-stone-900 uppercase tracking-wide text-sm group-hover:text-amber-700 transition-colors">
+                  <h3 className="font-bold text-stone-900 uppercase text-sm group-hover:text-amber-700 transition-colors">
                     {member.name}
                   </h3>
-                  <p className="text-amber-700 text-xs font-semibold tracking-widest uppercase mt-1 mb-3">
+                  <p className="text-amber-700 text-xs font-semibold uppercase mt-1 mb-3">
                     {member.role}
                   </p>
                   <p className="text-stone-500 text-sm leading-relaxed">{member.bio}</p>
@@ -261,7 +260,7 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="py-16 bg-amber-700">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-black text-white uppercase tracking-tight mb-4">
+          <h2 className="text-3xl font-black text-white uppercase mb-4">
             Work With Our Team
           </h2>
           <p className="text-amber-100 mb-8 leading-relaxed">

@@ -98,8 +98,8 @@ export default function PrivacyPage() {
       {/* Page Hero */}
       <section className="bg-stone-900 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <span className="text-amber-500 text-xs font-bold tracking-[0.35em] uppercase">Legal</span>
-          <h1 className="mt-3 text-4xl font-black text-white uppercase tracking-tight">
+          <span className="text-amber-500 text-xs font-bold uppercase">Legal</span>
+          <h1 className="mt-3 text-4xl font-black text-white uppercase">
             Privacy Policy
           </h1>
           <div className="mt-4 h-[3px] w-12 bg-amber-700" />
@@ -127,7 +127,7 @@ export default function PrivacyPage() {
           <div className="space-y-10">
             {sections.map((section) => (
               <div key={section.title} className="border-b border-stone-100 pb-10 last:border-0">
-                <h2 className="text-lg font-black text-stone-900 uppercase tracking-tight mb-4">
+                <h2 className="text-lg font-black text-stone-900 uppercase mb-4">
                   {section.title}
                 </h2>
                 <div className="text-stone-600 leading-relaxed text-sm whitespace-pre-line">
@@ -160,7 +160,7 @@ export default function PrivacyPage() {
 
           {/* Contact */}
           <div className="mt-12 p-6 bg-stone-50 border border-stone-200">
-            <h2 className="text-base font-black text-stone-900 uppercase tracking-tight mb-3">
+            <h2 className="text-base font-black text-stone-900 uppercase mb-3">
               Contact Us About Privacy
             </h2>
             <p className="text-stone-600 text-sm leading-relaxed mb-4">
