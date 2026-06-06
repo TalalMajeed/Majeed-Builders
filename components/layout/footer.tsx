@@ -14,13 +14,13 @@ const legalLinks = [
   { href: '/terms', label: 'Terms of Service' },
 ];
 
-const services = [
-  'Residential Construction',
-  'Commercial Buildings',
-  'Renovation & Remodeling',
-  'Project Management',
-  'Interior Finishing',
-  'Structural Engineering',
+const projectLinks = [
+  { href: '/projects/residential', label: 'Residential Homes' },
+  { href: '/projects/commercial', label: 'Commercial Buildings' },
+  { href: '/projects/renovation', label: 'Renovation Projects' },
+  { href: '/projects/interiors', label: 'Interior Finishing' },
+  { href: '/projects/structural', label: 'Structural Works' },
+  { href: '/projects', label: 'View All Projects' },
 ];
 
 export default function Footer() {
@@ -31,14 +31,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 bg-amber-700 flex items-center justify-center flex-shrink-0">
-                <span className="text-white font-black text-xs">MB</span>
-              </div>
-              <div className="leading-none">
-                <div className="font-black text-white text-sm uppercase">Majeed</div>
-                <div className="font-light text-stone-400 text-[10px] uppercase">Builders</div>
-              </div>
+            <div className="flex items-center">
+              <img src="/logo.svg" alt="Majeed Builders" className="h-12 w-auto brightness-0 invert" />
             </div>
             <p className="text-sm text-stone-400 leading-relaxed">
               Building excellence across Islamabad since 2010. Your trusted partner for residential
@@ -59,7 +53,7 @@ export default function Footer() {
                     href={link.href}
                     className="text-stone-400 hover:text-amber-500 text-sm transition-colors duration-150 flex items-center gap-2"
                   >
-                    <span className="text-amber-700 text-xs">&#9656;</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-700 flex-shrink-0" />
                     {link.label}
                   </Link>
                 </li>
@@ -67,14 +61,19 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Projects */}
           <div className="space-y-4">
-            <h3 className="text-white font-bold text-xs uppercase">Our Services</h3>
+            <h3 className="text-white font-bold text-xs uppercase">Our Projects</h3>
             <ul className="space-y-2">
-              {services.map((service) => (
-                <li key={service} className="text-stone-400 text-sm flex items-center gap-2">
-                  <span className="text-amber-700 text-xs">&#9656;</span>
-                  {service}
+              {projectLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-stone-400 hover:text-amber-500 text-sm transition-colors duration-150 flex items-center gap-2"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-700 flex-shrink-0" />
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -85,23 +84,23 @@ export default function Footer() {
             <h3 className="text-white font-bold text-xs uppercase">Contact Us</h3>
             <ul className="space-y-3 text-sm text-stone-400">
               <li className="flex gap-3">
-                <span className="text-amber-700 mt-0.5 flex-shrink-0">&#9679;</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-700 flex-shrink-0 mt-1.5" />
                 <span>Plot 45, Street 7, F-8/2,<br />Islamabad, Pakistan</span>
               </li>
               <li className="flex gap-3">
-                <span className="text-amber-700 mt-0.5 flex-shrink-0">&#9679;</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-700 flex-shrink-0 mt-1.5" />
                 <a href="tel:+925134567890" className="hover:text-amber-500 transition-colors">
                   +92 51 345 6789
                 </a>
               </li>
               <li className="flex gap-3">
-                <span className="text-amber-700 mt-0.5 flex-shrink-0">&#9679;</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-700 flex-shrink-0 mt-1.5" />
                 <a href="mailto:info@majeedbuilders.com" className="hover:text-amber-500 transition-colors break-all">
                   info@majeedbuilders.com
                 </a>
               </li>
               <li className="flex gap-3">
-                <span className="text-amber-700 mt-0.5 flex-shrink-0">&#9679;</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-700 flex-shrink-0 mt-1.5" />
                 <span>Mon – Sat: 9:00 AM – 6:00 PM</span>
               </li>
             </ul>

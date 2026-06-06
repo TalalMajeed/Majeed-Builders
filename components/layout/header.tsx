@@ -50,25 +50,17 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-stone-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center h-20">
           {/* Logo */}
-          <Link
-            href="/"
-            className="flex items-center gap-3 group"
-            aria-label="Majeed Builders — Home"
-          >
-            <div className="w-8 h-8 bg-amber-700 flex items-center justify-center flex-shrink-0">
-              <span className="text-white font-black text-xs">MB</span>
-            </div>
-            <div className="flex flex-col leading-none">
-              <span className="font-black text-stone-900 text-sm uppercase">
-                Majeed
-              </span>
-              <span className="font-light text-stone-500 text-[10px] uppercase">
-                Builders
-              </span>
-            </div>
-          </Link>
+          <div className="flex-1 flex items-center">
+            <Link
+              href="/"
+              className="flex items-center group"
+              aria-label="Majeed Builders — Home"
+            >
+              <img src="/logo.svg" alt="Majeed Builders" className="h-12 w-auto" />
+            </Link>
+          </div>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
@@ -78,8 +70,8 @@ export default function Header() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden md:block">
-            <Button href="/contact" size="sm">
+          <div className="flex-1 hidden md:flex items-center justify-end">
+            <Button href="/contact" size="sm" className="h-12 px-6 text-sm">
               Get a Quote
             </Button>
           </div>
