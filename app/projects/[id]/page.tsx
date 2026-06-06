@@ -19,11 +19,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: project.name,
     description: project.description,
-    alternates: { canonical: `https://majeedbuilders.pk/projects/${project.id}` },
+    alternates: { canonical: `https://majeedbuilders.com/projects/${project.id}` },
     openGraph: {
       title: `${project.name} | Majeed Builders`,
       description: project.description,
-      url: `https://majeedbuilders.pk/projects/${project.id}`,
+      url: `https://majeedbuilders.com/projects/${project.id}`,
     },
   };
 }

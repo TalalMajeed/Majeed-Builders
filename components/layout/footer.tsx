@@ -96,8 +96,8 @@ export default function Footer() {
               </li>
               <li className="flex gap-3">
                 <span className="text-amber-700 mt-0.5 flex-shrink-0">&#9679;</span>
-                <a href="mailto:info@majeedbuilders.pk" className="hover:text-amber-500 transition-colors break-all">
-                  info@majeedbuilders.pk
+                <a href="mailto:info@majeedbuilders.com" className="hover:text-amber-500 transition-colors break-all">
+                  info@majeedbuilders.com
                 </a>
               </li>
               <li className="flex gap-3">

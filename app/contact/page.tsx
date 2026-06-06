@@ -27,7 +27,7 @@ const contactDetails = [
   {
     icon: '/icons/email.png',
     label: 'Email',
-    lines: ['info@majeedbuilders.pk', 'projects@majeedbuilders.pk'],
+    lines: ['info@majeedbuilders.com', 'projects@majeedbuilders.com'],
   },
   {
     icon: '/icons/timing.png',
@@ -140,20 +140,6 @@ export default function ContactPage() {
                   </div>
                 </div>
               ))}
-
-              {/* Map placeholder */}
-              <div className="mt-6 h-52 bg-stone-100 border border-stone-200 flex flex-col items-center justify-center text-stone-400 gap-2 relative">
-                <div className="relative w-10 h-10 opacity-60">
-                  <Image
-                    src="/icons/location.png"
-                    alt="Map marker"
-                    fill
-                    className="object-contain grayscale"
-                  />
-                </div>
-                <span className="text-xs font-semibold uppercase">F-8/2, Islamabad</span>
-                <span className="text-xs text-stone-300">Interactive map coming soon</span>
-              </div>
             </div>
 
             {/* Contact Form */}
@@ -195,7 +181,7 @@ export default function ContactPage() {
                     <FormField label="Full Name" required error={errors.name}>
                       <Input
                         type="text"
-                        placeholder="Ahmed Khan"
+                        placeholder="Your Name"
                         value={form.name}
                         onChange={handleChange('name')}
                         error={!!errors.name}
@@ -205,7 +191,7 @@ export default function ContactPage() {
                     <FormField label="Email Address" required error={errors.email}>
                       <Input
                         type="email"
-                        placeholder="ahmed@example.com"
+                        placeholder="Your Email"
                         value={form.email}
                         onChange={handleChange('email')}
                         error={!!errors.email}
@@ -218,7 +204,7 @@ export default function ContactPage() {
                     <FormField label="Phone Number" error={errors.phone}>
                       <Input
                         type="tel"
-                        placeholder="+92 300 000 0000"
+                        placeholder="Your Phone Number (optional)"
                         value={form.phone}
                         onChange={handleChange('phone')}
                         error={!!errors.phone}

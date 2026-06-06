@@ -7,12 +7,12 @@ export const metadata: Metadata = {
   title: 'Our Projects',
   description:
     'Explore the complete portfolio of Majeed Builders — residential towers, commercial complexes, government housing schemes, and luxury villas across Islamabad.',
-  alternates: { canonical: 'https://majeedbuilders.pk/projects' },
+  alternates: { canonical: 'https://majeedbuilders.com/projects' },
   openGraph: {
     title: 'Our Projects | Majeed Builders',
     description:
       '200+ projects delivered across Islamabad. Browse our residential and commercial construction portfolio.',
-    url: 'https://majeedbuilders.pk/projects',
+    url: 'https://majeedbuilders.com/projects',
   },
 };
 

@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
-import './globals.css';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import TopLoader from '@/components/loader';
+import "./globals.css";
 import { NavigationProvider } from '@/components/navigation-provider';
+import WhatsApp from '@/components/layout/whatsapp';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_PK',
-    url: 'https://majeedbuilders.pk',
+    url: 'https://majeedbuilders.com',
     siteName: 'Majeed Builders',
     title: 'Majeed Builders | Premier Construction Company in Islamabad',
     description:
@@ -61,7 +62,7 @@ export const metadata: Metadata = {
       'Building excellence across Islamabad since 2010. Residential and commercial construction, renovation, and project management.',
   },
   alternates: {
-    canonical: 'https://majeedbuilders.pk',
+    canonical: 'https://majeedbuilders.com',
   },
 };
 
@@ -74,7 +75,10 @@ export default function RootLayout({
         <NavigationProvider>
           <TopLoader />
           <Header />
-          <main>{children}</main>
+          <main>
+            {children}
+          <WhatsApp />
+          </main>
           <Footer />
         </NavigationProvider>
       </body>

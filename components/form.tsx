@@ -41,7 +41,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         ref={ref}
         className={[
           'w-full px-4 py-3 bg-white border text-stone-900 placeholder:text-stone-400 text-sm',
-          'focus:outline-none focus:ring-2 focus:ring-amber-700 focus:ring-offset-0 focus:border-amber-700',
+          'focus:outline-none focus:ring-[1px] focus:ring-amber-700 focus:ring-offset-0 focus:border-amber-700',
           'transition-colors duration-150',
           error ? 'border-red-500' : 'border-stone-300',
           className ?? '',
@@ -66,7 +66,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
         ref={ref}
         className={[
           'w-full px-4 py-3 bg-white border text-stone-900 placeholder:text-stone-400 text-sm resize-none',
-          'focus:outline-none focus:ring-2 focus:ring-amber-700 focus:ring-offset-0 focus:border-amber-700',
+          'focus:outline-none focus:ring-[1px] focus:ring-amber-700 focus:ring-offset-0 focus:border-amber-700',
           'transition-colors duration-150',
           error ? 'border-red-500' : 'border-stone-300',
           className ?? '',
@@ -93,7 +93,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
         ref={ref}
         className={[
           'w-full px-4 py-3 bg-white border text-stone-900 text-sm appearance-none cursor-pointer',
-          'focus:outline-none focus:ring-2 focus:ring-amber-700 focus:ring-offset-0 focus:border-amber-700',
+          'focus:outline-none focus:ring-[1px] focus:ring-amber-700 focus:ring-offset-0 focus:border-amber-700',
           'transition-colors duration-150',
           error ? 'border-red-500' : 'border-stone-300',
           className ?? '',

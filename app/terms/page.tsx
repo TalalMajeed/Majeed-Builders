@@ -5,14 +5,14 @@ export const metadata: Metadata = {
   title: 'Terms of Service',
   description:
     'Read the Majeed Builders Terms of Service — the terms and conditions governing use of our website and construction services.',
-  alternates: { canonical: 'https://majeedbuilders.pk/terms' },
+  alternates: { canonical: 'https://majeedbuilders.com/terms' },
   robots: { index: true, follow: true },
 };
 
 const sections = [
   {
     title: '1. Acceptance of Terms',
-    content: `By accessing or using the Majeed Builders website at majeedbuilders.pk ("the Site") or by engaging our construction services, you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, you must not use the Site or our services.
+    content: `By accessing or using the Majeed Builders website at majeedbuilders.com ("the Site") or by engaging our construction services, you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, you must not use the Site or our services.
 
 These Terms apply to all visitors, clients, contractors, and any other parties who access our Site or engage with Majeed Builders in any capacity.`,
   },
@@ -98,7 +98,7 @@ Our total liability for any claim arising from the use of this Site shall not ex
 
 Majeed Builders
 Plot 45, Street 7, F-8/2, Islamabad, Pakistan
-Email: legal@majeedbuilders.pk
+Email: legal@majeedbuilders.com
 Phone: +92 51 345 6789`,
   },
 ];
@@ -107,16 +107,15 @@ export default function TermsPage() {
   return (
     <>
       {/* Page Hero */}
-      <section className="bg-stone-900 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-stone-900 py-16 flex justify-center flex-row">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
           <span className="text-amber-500 text-xs font-bold uppercase">Legal</span>
           <h1 className="mt-3 text-4xl font-black text-white uppercase">
             Terms of Service
           </h1>
           <div className="mt-4 h-[3px] w-12 bg-amber-700" />
           <p className="mt-5 text-stone-400 text-sm">
-            Effective Date: <strong className="text-stone-300">1 January 2024</strong>
-            &nbsp;·&nbsp; Last Updated: <strong className="text-stone-300">1 June 2025</strong>
+            Last Updated: <strong className="text-stone-300">1 June 2025</strong>
           </p>
         </div>
       </section>
@@ -133,9 +132,9 @@ export default function TermsPage() {
           </div>
 
           {/* Sections */}
-          <div className="space-y-10">
+          <div className="space-y-6">
             {sections.map((section) => (
-              <div key={section.title} className="border-b border-stone-100 pb-10 last:border-0">
+              <div key={section.title}>
                 <h2 className="text-lg font-black text-stone-900 uppercase mb-4">
                   {section.title}
                 </h2>
@@ -155,19 +154,6 @@ export default function TermsPage() {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Footer links */}
-          <div className="mt-12 p-6 bg-stone-50 border border-stone-200 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
-            <p className="text-stone-500 text-sm">
-              Questions about these Terms?{' '}
-              <Link href="/contact" className="text-amber-700 font-semibold hover:underline">
-                Contact our team
-              </Link>
-            </p>
-            <Link href="/privacy" className="text-amber-700 text-sm font-semibold hover:underline flex-shrink-0">
-              View Privacy Policy →
-            </Link>
           </div>
         </div>
       </section>

@@ -3,9 +3,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Button from '@/components/button';
 import { projects } from '@/lib/projects';
+import StatsBar from '@/components/stats';
 
 export const metadata: Metadata = {
-  alternates: { canonical: 'https://majeedbuilders.pk' },
+  alternates: { canonical: 'https://majeedbuilders.com' },
 };
 
 const stats = [
@@ -63,11 +64,12 @@ const whyUs = [
 
 const featuredProjects = projects.slice(0, 3);
 
+
+
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[93svh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/background.png"
@@ -80,12 +82,7 @@ export default function HomePage() {
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-block mb-6">
-            <span className="text-amber-500 text-xs font-bold uppercase border border-amber-500/50 px-4 py-2">
-              Islamabad, Pakistan
-            </span>
-          </div>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white uppercase leading-none mb-6">
+          <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase leading-none mb-6">
             Building Your<br />
             <span className="text-amber-500">Vision</span> Into<br />
             Reality
@@ -98,9 +95,12 @@ export default function HomePage() {
             <Button href="/projects" size="lg">
               View Our Projects
             </Button>
-            <Button href="/contact" variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-stone-900">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200 px-8 py-4 text-base bg-white text-amber-800 hover:bg-amber-50 active:bg-amber-100"
+            >
               Get a Free Quote
-            </Button>
+            </Link>
           </div>
         </div>
 
@@ -109,23 +109,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats Bar */}
-      <section className="bg-amber-700 py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-white">
-                <div className="text-4xl font-black">{stat.value}</div>
-                <div className="text-amber-200 text-xs font-semibold uppercase mt-1">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <StatsBar />
 
-      {/* Services */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-14 max-w-xl">
@@ -162,7 +147,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Projects */}
       <section className="py-20 bg-stone-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
@@ -227,7 +211,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
       <section className="py-20 bg-stone-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-14 max-w-xl">
@@ -256,7 +239,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="py-20 bg-amber-700">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-black text-white uppercase mb-4">

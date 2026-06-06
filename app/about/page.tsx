@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   title: 'About Us',
   description:
     'Learn about Majeed Builders — our story, mission, values, and the expert team behind Islamabad\'s most trusted construction company.',
-  alternates: { canonical: 'https://majeedbuilders.pk/about' },
+  alternates: { canonical: 'https://majeedbuilders.com/about' },
   openGraph: {
     title: 'About Us | Majeed Builders',
     description:
       'Over 15 years of building excellence in Islamabad. Meet the team and the values that drive every project we undertake.',
-    url: 'https://majeedbuilders.pk/about',
+    url: 'https://majeedbuilders.com/about',
   },
 };
 
