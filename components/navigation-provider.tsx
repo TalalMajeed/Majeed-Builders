@@ -18,6 +18,7 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
   const [isPending, startTransition] = useTransition();
 
   const navigate = (href: string) => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
     startTransition(() => {
       router.push(href);
     });
