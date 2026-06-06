@@ -1,0 +1,5 @@
+- Never add comments to code
+- Never create a file with dashes or an un-needed file. Use single word names for files
+- No normal <button> <img> or <input> usage. Create all elements in /components
+- No manual tailwind styling for features defined in /components. Everything should be set in /components
+- No md File generation
