@@ -43,25 +43,25 @@ const team = [
     name: 'Abdul Majeed',
     role: 'Chief Executive Officer',
     bio: 'Founder of Majeed Builders, leading every project with hands-on involvement and a commitment to quality.',
-    image: '/team/abdulmajeed.jpeg',
+    image: '/team/abdulmajeed.webp',
   },
   {
     name: 'Tahir Majeed',
     role: 'Partner',
     bio: 'Oversees daily operations and client relations, ensuring smooth delivery across all active projects.',
-    image: '/team/tahirmajeed.jpeg',
+    image: '/team/tahirmajeed.webp',
   },
   {
     name: 'Tariq Majeed',
     role: 'Consultant',
     bio: 'Guides technical and structural decisions, bringing deep construction expertise to every build.',
-    image: '/team/tariqmajeed.jpeg',
+    image: '/team/tariqmajeed.webp',
   },
   {
     name: 'Tayyab Majeed',
     role: 'Marketing',
     bio: 'Leads brand outreach and client acquisition, connecting the right people to the right projects.',
-    image: '/team/tayyabmajeed.jpeg',
+    image: '/team/tayyabmajeed.webp',
   },
 ];
 
@@ -107,7 +107,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map((member) => (
               <div key={member.name} className="bg-stone-50 border border-stone-200 overflow-hidden group hover:border-amber-700 transition-colors">
-                <div className="h-72 relative overflow-hidden">
+                <div className="h-96 sm:h-72 relative overflow-hidden">
                   <Image
                     src={member.image}
                     alt={member.name}

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 export default function WhatsApp() {
-  const phoneNumber = '923001234567'; // Replace with your actual WhatsApp number with country code
+  const phoneNumber = '923335422214';
   const message = encodeURIComponent('Hello Majeed Builders, I would like to get a quote.');
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
