@@ -9,13 +9,6 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://majeedbuilders.com' },
 };
 
-const stats = [
-  { value: '15+', label: 'Years of Experience' },
-  { value: '200+', label: 'Projects Completed' },
-  { value: '50+', label: 'Expert Team Members' },
-  { value: '100%', label: 'Client Satisfaction' },
-];
-
 const services = [
   {
     icon: '/icons/house.png',
@@ -71,13 +64,13 @@ export default function HomePage() {
     <>
       <section className="relative min-h-[93svh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image
-            src="/background.webp"
-            alt="Majeed Builders construction site"
-            fill
-            priority
-            className="object-cover"
-          />
+    <Image
+      src="/background.webp"
+      alt="Majeed Builders construction site"
+      fill
+      priority
+      className="object-cover object-top"
+    />
           <div className="absolute inset-0 bg-stone-900/65" />
         </div>
 

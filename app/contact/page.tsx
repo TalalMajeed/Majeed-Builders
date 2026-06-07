@@ -17,17 +17,12 @@ const contactDetails = [
   {
     icon: '/icons/location.png',
     label: 'Office Address',
-    lines: ['Plot 45, Street 7, F-8/2', 'Islamabad, 44000', 'Pakistan'],
+    lines: ['House 01, Street 16E, Road 5A', 'Sector C, Bahria Enclave', 'Islamabad, Pakistan'],
   },
   {
     icon: '/icons/phone.png',
     label: 'Phone',
-    lines: ['+92 51 345 6789', '+92 300 123 4567'],
-  },
-  {
-    icon: '/icons/email.png',
-    label: 'Email',
-    lines: ['info@majeedbuilders.com', 'projects@majeedbuilders.com'],
+    lines: ['+92 333 171 7386', '+92 333 542 2214'],
   },
   {
     icon: '/icons/timing.png',

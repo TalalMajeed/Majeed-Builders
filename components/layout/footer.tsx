@@ -35,8 +35,8 @@ export default function Footer() {
               <img src="/logo.svg" alt="Majeed Builders" className="h-12 w-auto brightness-0 invert" />
             </div>
             <p className="text-sm text-stone-400 leading-relaxed">
-              Building excellence across Islamabad since 2010. Your trusted partner for residential
-              and commercial construction projects.
+              Building excellence across Islamabad since 2020. Your trusted partner for residential
+              construction in Bahria Enclave and beyond.
             </p>
             <div className="pt-2">
               <div className="h-[2px] w-10 bg-amber-700" />
@@ -85,18 +85,18 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-stone-400">
               <li className="flex gap-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-700 flex-shrink-0 mt-1.5" />
-                <span>Plot 45, Street 7, F-8/2,<br />Islamabad, Pakistan</span>
+                <span>House 01, Street 16E, Road 5A,<br />Sector C, Bahria Enclave, Islamabad</span>
               </li>
               <li className="flex gap-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-700 flex-shrink-0 mt-1.5" />
-                <a href="tel:+925134567890" className="hover:text-amber-500 transition-colors">
-                  +92 51 345 6789
+                <a href="tel:+923331717386" className="hover:text-amber-500 transition-colors">
+                  +92 333 171 7386
                 </a>
               </li>
               <li className="flex gap-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-700 flex-shrink-0 mt-1.5" />
-                <a href="mailto:info@majeedbuilders.com" className="hover:text-amber-500 transition-colors break-all">
-                  info@majeedbuilders.com
+                <a href="tel:+923335422214" className="hover:text-amber-500 transition-colors">
+                  +92 333 542 2214
                 </a>
               </li>
               <li className="flex gap-3">

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Button from '@/components/button';
 
 export const metadata: Metadata = {
@@ -40,33 +41,37 @@ const values = [
 const team = [
   {
     name: 'Abdul Majeed',
-    role: 'Founder & CEO',
-    bio: 'With 25+ years in the construction industry, Abdul Majeed founded the company with a vision to bring world-class construction standards to Pakistan.',
+    role: 'Chief Executive Officer',
+    bio: 'Founder of Majeed Builders, leading every project with hands-on involvement and a commitment to quality.',
+    image: '/team/abdulmajeed.jpeg',
   },
   {
-    name: 'Tariq Hassan',
-    role: 'Chief Engineer',
-    bio: 'A licensed structural engineer with a Masters from NED University, Tariq leads all technical aspects of project design and execution.',
+    name: 'Tahir Majeed',
+    role: 'Partner',
+    bio: 'Oversees daily operations and client relations, ensuring smooth delivery across all active projects.',
+    image: '/team/tahirmajeed.jpeg',
   },
   {
-    name: 'Sara Iqbal',
-    role: 'Head of Projects',
-    bio: 'Sara brings 12 years of project management expertise, ensuring every project is delivered on schedule and within budget.',
+    name: 'Tariq Majeed',
+    role: 'Consultant',
+    bio: 'Guides technical and structural decisions, bringing deep construction expertise to every build.',
+    image: '/team/tariqmajeed.jpeg',
   },
   {
-    name: 'Bilal Chaudhry',
-    role: 'Lead Architect',
-    bio: 'Bilal holds a degree from NCA Lahore and has designed award-winning residential and commercial structures across Islamabad.',
+    name: 'Tayyab Majeed',
+    role: 'Marketing',
+    bio: 'Leads brand outreach and client acquisition, connecting the right people to the right projects.',
+    image: '/team/tayyabmajeed.jpeg',
   },
 ];
 
 const milestones = [
-  { year: '2010', event: 'Majeed Builders founded with a team of 8 in Islamabad.' },
-  { year: '2013', event: 'Completed first large commercial project — a 6-storey office building in Blue Area.' },
-  { year: '2016', event: 'Expanded team to 50+ professionals. Entered the luxury residential segment.' },
-  { year: '2019', event: 'Received Best Builder Award by Islamabad Chamber of Commerce.' },
-  { year: '2022', event: 'Crossed 150 completed projects. Launched a dedicated project management division.' },
-  { year: '2024', event: 'Currently executing 4 simultaneous large-scale projects across Islamabad.' },
+  { year: '2020', event: 'Majeed Builders (Partnership) founded in Islamabad by Abdul Majeed.' },
+  { year: '2021', event: 'Completed first residential project — a 1 Canal, 2-floor home in Bahria Enclave Sector C.' },
+  { year: '2022', event: 'Delivered two more projects in Bahria Enclave: an 8 Marla home in Sector G and a 10 Marla home in Sector M.' },
+  { year: '2023', event: 'Expanded portfolio with a 5 Marla home in Sector M and grew the team to 25+ professionals.' },
+  { year: '2024', event: 'Broke ground on new projects in Park View City (Overseas Block) and Saif Garden, Islamabad.' },
+  { year: '2025', event: 'Continuing to execute simultaneous projects with 100% client satisfaction across all completed builds.' },
 ];
 
 export default function AboutPage() {
@@ -82,14 +87,51 @@ export default function AboutPage() {
           </h1>
           <div className="mt-4 h-[3px] w-12 bg-amber-700" />
           <p className="mt-6 max-w-2xl text-stone-300 text-lg leading-relaxed">
-            Since 2010, Majeed Builders has been at the forefront of construction in Islamabad — delivering
-            projects that define the skyline and stand as testaments to quality craftsmanship.
+            Since 2020, Majeed Builders has been delivering residential construction projects across
+            Islamabad — built on trust, quality craftsmanship, and complete client satisfaction.
           </p>
         </div>
       </section>
 
-      {/* Story */}
+      {/* Team */}
       <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-14">
+            <span className="text-amber-700 text-xs font-bold uppercase">The People</span>
+            <h2 className="mt-3 text-4xl font-black text-stone-900 uppercase">
+              Meet Our Leadership
+            </h2>
+            <div className="mt-4 h-[3px] w-12 bg-amber-700" />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {team.map((member) => (
+              <div key={member.name} className="bg-stone-50 border border-stone-200 overflow-hidden group hover:border-amber-700 transition-colors">
+                <div className="h-72 relative overflow-hidden">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
+                <div className="p-4">
+                  <h3 className="font-bold text-stone-900 uppercase text-sm group-hover:text-amber-700 transition-colors">
+                    {member.name}
+                  </h3>
+                  <p className="text-amber-700 text-xs font-semibold uppercase mt-1 mb-2">
+                    {member.role}
+                  </p>
+                  <p className="text-stone-500 text-xs leading-relaxed">{member.bio}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Story */}
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -100,22 +142,20 @@ export default function AboutPage() {
               <div className="mt-4 h-[3px] w-12 bg-amber-700 mb-8" />
               <div className="space-y-5 text-stone-600 leading-relaxed">
                 <p>
-                  Majeed Builders was established in 2010 by Abdul Majeed with a straightforward goal:
-                  to build structures that Islamabad would be proud of for generations. Starting with a
-                  small team of dedicated professionals, we took on our first residential project in F-7
-                  and delivered it three weeks ahead of schedule.
+                  Majeed Builders was established in 2020 by Abdul Majeed as a partnership firm with a
+                  straightforward goal: to build homes in Islamabad that families would be proud of for
+                  generations. Starting in Bahria Enclave, we completed our first 1 Canal residential
+                  project and delivered it to full client satisfaction.
                 </p>
                 <p>
-                  Word spread quickly. By 2013, we had expanded into commercial construction, securing
-                  contracts in Blue Area and the central business district. Our reputation for quality
-                  materials, honest pricing, and transparent communication became our most powerful
-                  marketing tool.
+                  Word spread quickly within the community. We went on to deliver multiple projects
+                  across Bahria Enclave — ranging from 5 Marla to 1 Canal homes — each completed to the
+                  same standard of quality, transparency, and honest pricing.
                 </p>
                 <p>
-                  Today, with a team of over 50 engineers, architects, site managers, and skilled
-                  workers, we are one of Islamabad&apos;s most recognised construction companies — with
-                  a portfolio spanning residential towers, commercial complexes, government housing
-                  schemes, and luxury villas.
+                  Today, with a growing team of 25+ professionals and ongoing projects in Park View City
+                  and Saif Garden, Majeed Builders continues to be a trusted name for residential
+                  construction across Islamabad.
                 </p>
               </div>
             </div>
@@ -123,10 +163,10 @@ export default function AboutPage() {
             {/* Stats panel */}
             <div className="grid grid-cols-2 gap-4">
               {[
-                { value: '15+', label: 'Years Active' },
-                { value: '200+', label: 'Projects Delivered' },
-                { value: '50+', label: 'Team Members' },
-                { value: '12+', label: 'Awards Won' },
+                { value: '6+', label: 'Years Active' },
+                { value: '6+', label: 'Projects Delivered' },
+                { value: '25+', label: 'Team Members' },
+                { value: '100%', label: 'Client Satisfaction' },
               ].map((stat) => (
                 <div key={stat.label} className="bg-stone-50 border border-stone-200 p-8 text-center">
                   <div className="text-4xl font-black text-amber-700">{stat.value}</div>
@@ -216,40 +256,6 @@ export default function AboutPage() {
                 <div className="flex items-start gap-4">
                   <div className="mt-2 w-2 h-2 bg-amber-700 rounded-full flex-shrink-0" />
                   <p className="text-stone-300 leading-relaxed">{m.event}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-14">
-            <span className="text-amber-700 text-xs font-bold uppercase">The People</span>
-            <h2 className="mt-3 text-4xl font-black text-stone-900 uppercase">
-              Meet Our Leadership
-            </h2>
-            <div className="mt-4 h-[3px] w-12 bg-amber-700" />
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {team.map((member) => (
-              <div key={member.name} className="bg-stone-50 border border-stone-200 overflow-hidden group hover:border-amber-700 transition-colors">
-                <div className="h-44 bg-stone-200 group-hover:bg-amber-50 transition-colors duration-300 flex items-center justify-center">
-                  <span className="text-5xl font-black text-stone-400 opacity-40 uppercase">
-                    {member.name.charAt(0)}
-                  </span>
-                </div>
-                <div className="p-6">
-                  <h3 className="font-bold text-stone-900 uppercase text-sm group-hover:text-amber-700 transition-colors">
-                    {member.name}
-                  </h3>
-                  <p className="text-amber-700 text-xs font-semibold uppercase mt-1 mb-3">
-                    {member.role}
-                  </p>
-                  <p className="text-stone-500 text-sm leading-relaxed">{member.bio}</p>
                 </div>
               </div>
             ))}

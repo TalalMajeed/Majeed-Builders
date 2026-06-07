@@ -4,9 +4,9 @@ import { useEffect, useRef } from 'react';
 import { useInView, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
 const stats = [
-  { value: '15+', label: 'Years of Experience' },
-  { value: '200+', label: 'Projects Completed' },
-  { value: '50+', label: 'Expert Team Members' },
+  { value: '6+', label: 'Years of Experience' },
+  { value: '6+', label: 'Projects Completed' },
+  { value: '25+', label: 'Expert Team Members' },
   { value: '100%', label: 'Client Satisfaction' },
 ];
 
