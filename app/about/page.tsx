@@ -58,10 +58,10 @@ const team = [
     image: '/team/tariqmajeed.webp',
   },
   {
-    name: 'Tayyab Majeed',
+    name: 'Mian Majeed',
     role: 'Marketing',
     bio: 'Leads brand outreach and client acquisition, connecting the right people to the right projects.',
-    image: '/team/tayyabmajeed.webp',
+    image: '/team/placeholder.webp',
   },
 ];
 
