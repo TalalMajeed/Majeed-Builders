@@ -67,7 +67,7 @@ const team = [
 
 const milestones = [
   { year: '2020', event: 'Majeed Builders (Partnership) founded in Islamabad by Abdul Majeed.' },
-  { year: '2021', event: 'Completed first residential project — a 1 Canal, 2-floor home in Bahria Enclave Sector C.' },
+  { year: '2021', event: 'Completed first residential project — a 1 Kanal, 2-floor home in Bahria Enclave Sector C.' },
   { year: '2022', event: 'Delivered two more projects in Bahria Enclave: an 8 Marla home in Sector G and a 10 Marla home in Sector M.' },
   { year: '2023', event: 'Expanded portfolio with a 5 Marla home in Sector M and grew the team to 25+ professionals.' },
   { year: '2024', event: 'Broke ground on new projects in Park View City (Overseas Block) and Saif Garden, Islamabad.' },
@@ -144,12 +144,12 @@ export default function AboutPage() {
                 <p>
                   Majeed Builders was established in 2020 by Abdul Majeed as a partnership firm with a
                   straightforward goal: to build homes in Islamabad that families would be proud of for
-                  generations. Starting in Bahria Enclave, we completed our first 1 Canal residential
+                  generations. Starting in Bahria Enclave, we completed our first 1 Kanal residential
                   project and delivered it to full client satisfaction.
                 </p>
                 <p>
                   Word spread quickly within the community. We went on to deliver multiple projects
-                  across Bahria Enclave — ranging from 5 Marla to 1 Canal homes — each completed to the
+                  across Bahria Enclave — ranging from 5 Marla to 1 Kanal homes — each completed to the
                   same standard of quality, transparency, and honest pricing.
                 </p>
                 <p>

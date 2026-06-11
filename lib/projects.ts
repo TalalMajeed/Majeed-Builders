@@ -20,13 +20,13 @@ export const projects: Project[] = [
     status: 'Completed',
     location: 'Bahria Enclave, Islamabad',
     year: 2021,
-    area: '1 Canal',
+    area: '1 Kanal',
     units: '2 Floors',
     client: 'Private Client',
     description:
-      'A spacious 1 Canal, 2-floor residential home built in the heart of Bahria Enclave Sector C. Delivered with premium finishes and structural integrity, this project set the foundation for Majeed Builders\' reputation in Bahria Enclave.',
+      'A spacious 1 Kanal, 2-floor residential home built in the heart of Bahria Enclave Sector C. Delivered with premium finishes and structural integrity, this project set the foundation for Majeed Builders\' reputation in Bahria Enclave.',
     highlights: [
-      '1 Canal plot',
+      '1 Kanal plot',
       '2-floor construction',
       'Premium interior finishing',
       'Structural steel framework',
@@ -100,13 +100,13 @@ export const projects: Project[] = [
     status: 'In Progress',
     location: 'Park View City, Islamabad',
     year: 2024,
-    area: '1 Canal',
+    area: '1 Kanal',
     units: '2 Floors',
     client: 'Private Client',
     description:
-      'An ongoing 1 Canal, 2-floor residential project in the prestigious Overseas Block of Park View City. This build features high-end specifications befitting the upscale neighbourhood and is currently under active construction.',
+      'An ongoing 1 Kanal, 2-floor residential project in the prestigious Overseas Block of Park View City. This build features high-end specifications befitting the upscale neighbourhood and is currently under active construction.',
     highlights: [
-      '1 Canal plot',
+      '1 Kanal plot',
       '2-floor construction',
       'Premium Overseas Block location',
       'High-end material specifications',
